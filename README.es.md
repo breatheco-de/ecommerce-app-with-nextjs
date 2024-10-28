@@ -29,7 +29,7 @@ No clones este repositorio porque vamos a utilizar una plantilla diferente.
 
 ### Paso 3: Crea la Lista de Productos
 
-- [ ] Crea un conjunto de datos de ejemplo para tus productos. Puedes crear un archivo `products.js` con un array de objetos que representen los productos.
+- [ ] Crea un conjunto de datos de ejemplo para tus productos. Puedes crear un archivo `products.json` con un array de objetos que representen los productos.
 
 ```json
 [
