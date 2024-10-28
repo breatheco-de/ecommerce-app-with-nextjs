@@ -1,126 +1,101 @@
 <!-- hide -->
-# Create an Excuse Generator using AI
+# Build a Basic E-commerce App with Next.js!
 <!-- endhide -->
 
 ## 🌱 How to start this project?
 
-Do not clone this repository because we are going to be using a different template.
+Do not clone this repository because we are going to use a different template.
 
-We recommend opening the `flask template` or the `vanilla.js template` using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can [clone the github repository](https://4geeks.com/how-to/github-clone-repository) on your local computer using the `git clone` command.
-
-These are the repositories you need to open or clone:
-
-```txt
-🐍 For Python:
-https://github.com/4GeeksAcademy/flask-rest-hello
-
-👩🏽‍💻 For Javascript:
-https://github.com/4GeeksAcademy/vanillajs-hello
-```
-
-> ⚠ You will need to have Node.js or Python 3.7+ installed if you do it locally, but all of that is already installed on Codespaces or Gitpod.
+> ⚠ You will need to have Node.js installed if you do it locally, but all of that is already installed on Codespaces or Gitpod!
 
 ## 📝 Instructions
 
 ### Step 1: Set Up the Project
 
-- [ ] Choose your preferred language and set up the boilerplate project from the provided templates.
-   - For Python: Use the Flask template.
-   - For JavaScript: Use the VanillaJS template.
-   
-- [ ] Follow the instructions in the README of the respective repositories to set up your development environment.
+- [ ] Set up the base project by following the steps given in the official Next.js documentation: [https://nextjs.org/docs/getting-started/installation](https://nextjs.org/docs/getting-started/installation).
 
-### Step 2: Get Access to ChatGPT's API
+- [ ] Follow the instructions in the repository's README to set up your development environment.
 
-- [ ] Sign up for an account at [OpenAI](https://www.openai.com/).
-- [ ] Navigate to the API section and obtain your API key for accessing the free version of ChatGPT.
+### Step 2: Plan the App Structure
 
-### Step 3: Create an Input Form or use a prompt if building the project on the terminal
+- [ ] Define the pages your application will have, such as:
 
-- [ ] Implement an input form in your chosen language where users can specify what the excuse should be for.
-   - For Python (On the terminal): You might use the `prompt()` function to ask the user.
-   - For JavaScript (): You might create an HTML form and handle form submission with JavaScript by manipulating the DOM.
+  - Main page displaying a list of products.
+  - Product detail page.
+  - Shopping cart.
+  - Checkout page.
 
+- [ ] Decide how you will structure the components and routes in Next.js.
 
-### Step 4: Connect to ChatGPT's API
+### Step 3: Create the Product List
 
-- [ ] Use the value from the input form to create a prompt for the ChatGPT API request.
-- [ ] Send the request to the ChatGPT API and handle the response.
+- [ ] Create a sample dataset for your products. You can create a `products.json` file with an array of objects representing the products.
 
-Example for Python:
-```python
-import requests
-
-@app.route('/generate_excuse', methods=['POST'])
-def generate_excuse():
-    excuse_for = request.form['excuse_for']
-    prompt = f"Give me an excuse for {excuse_for}:"
-    
-    response = requests.post('https://api.openai.com/v1/engines/davinci-codex/completions', 
-                             headers={'Authorization': f'Bearer {api_key}'}, 
-                             json={'prompt': prompt, 'max_tokens': 50})
-    
-    excuse = response.json()['choices'][0]['text']
-    return render_template('result.html', excuse=excuse)
+```json
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 19.99,
+    "image": "/images/product1.jpg",
+    "description": "Description of Product 1"
+  }
+  // ...more products
+]
 ```
 
-Example for JavaScript:
-```javascript
-document.getElementById('excuseForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const excuseFor = document.getElementById('excuseFor').value;
-    const prompt = `Give me an excuse for ${excuseFor}:`;
+- [ ] In the main page (`pages/index.js`), import the product list and display each product with its name, image, and price.
 
-    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ prompt: prompt, max_tokens: 50 })
-    });
+### Step 4: Create the Product Detail Page
 
-    const data = await response.json();
-    const excuse = data.choices[0].text;
-    // Display the excuse to the user
-});
-```
+- [ ] Create a dynamic page for the product details in `pages/product/[id].js`.
 
-### Step 5: Display the Generated Excuse
+- [ ] Use `getStaticPaths` and `getStaticProps` to generate static pages for each product.
 
-- [ ] Once you receive the response from ChatGPT's API, display the generated excuse to the user.
-   - For Python (Flask): You might show the excuse in the terminal with a `print()`.
-   - For JavaScript: You might update the DOM to show the excuse.
+### Step 5: Implement the Shopping Cart
 
-Example for JavaScript:
-```javascript
-document.getElementById('excuseForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const excuseFor = document.getElementById('excuseFor').value;
-    const prompt = `Give me an excuse for ${excuseFor}:`;
+- [ ] Use the `useState` or `useContext` hook to manage the shopping cart state.
 
-    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ prompt: prompt, max_tokens: 50 })
-    });
+- [ ] Create a context (`CartContext`) to share the cart state throughout the application.
 
-    const data = await response.json();
-    const excuse = data.choices[0].text;
-    document.getElementById('result').innerText = `Your excuse is: ${excuse}`;
-});
-```
+- [ ] Wrap your application with the `CartProvider` in `_app.js`.
 
-### Bonus Section
+### Step 6: Create the Cart Page
 
-#### Additional Features to Practice and Improve the Project
+- [ ] Create a `/cart` page that displays the products added to the cart.
 
-1. **Styling:** Add CSS to style your web interface, making it more user-friendly and visually appealing.
-2. **Customization:** Allow users to specify different types of excuses (e.g., work, school, family).
-3. **History:** Store generated excuses in a database or local storage so users can view previously generated excuses.
-4. **API Error Handling:** Add proper error handling for API requests to improve the user experience.
+- [ ] Allow the user to modify the quantity or remove products from the cart.
 
-Feel free to explore and add more features to make your Excuse Generator even more robust and user-friendly!
+### Step 7: Create the Checkout Page
+
+- [ ] Create a `/checkout` page where the user can enter their details and confirm the purchase.
+
+- [ ] It is not necessary to process real payments; you can simulate the process.
+
+### Step 8: Improve the User Interface
+
+- [ ] Use CSS or a library like Tailwind CSS or Bootstrap to improve the design of your application.
+
+- [ ] Ensure that the application is responsive and works well on different devices.
+
+## Bonus Section
+
+### Additional Features to Practice and Improve the Project
+
+1. **Filtering and Search:** Implement functionalities to filter products by category and search by name.
+
+2. **Quantity in Cart:** Allow the user to select the quantity of each product in the cart.
+
+3. **Data Persistence:** Store the cart state in `localStorage` so it persists when the page is reloaded.
+
+4. **User Authentication:** Implement a basic registration and login system.
+
+5. **API Integration:** Connect your application with a real or simulated API to fetch the products.
+
+6. **SEO Optimization:** Take advantage of Next.js's server-side rendering features to improve SEO.
+
+7. **Pagination:** If you have many products, add pagination to the product list.
+
+8. **Payment Processing:** Integrate a service like Stripe to process real payments.
+
+Explore different enhancements to make your e-commerce application more complete and functional!
