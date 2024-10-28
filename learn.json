@@ -6,7 +6,7 @@
   "slug": "ecommerce-app-nextjs",
   "status": "published",
   "duration": 4,
-  "preview": "https://storage.googleapis.com/screenshots-breathecode/ecommerce-app-preview.png",
+  "preview": "",
   "translations": ["es", "us"],
   "difficulty": "intermediate",
   "technologies": ["javascript", "react", "next.js"],
