@@ -1,19 +1,19 @@
 {
-	"title": {
-		"us": "Code an Excuse Generator Using AI",
-		"es": "Generador de excusas en usando IA"
-	},
-	"slug": "excuse-generator-using-ai",
-	"status": "published",
-	"duration": 4,
-	"preview": "https://github.com/breatheco-de/excuse-generator-using-ai/blob/master/preview.gif?raw=true",
-	"translations": ["es", "us"],
-	"difficulty": "beginner",
-	"technologies": ["javascript", "html", "the-dom", "python", "generative-ai"],
-	"description": {
-		"us": "Create an AI-powered Excuse Generator using Python or JavaScript. Learn to connect with ChatGPT's API and generate creative excuses. Perfect for coding practice!",
-		"es": "Crea un Generador de Excusas con IA usando Python o JavaScript. Aprende a conectar con la API de ChatGPT y genera excusas creativas. ¡Ideal para practicar programación!"
-	},
-	"autoPlay": false,
-	"projectType": "project"
+  "title": {
+    "us": "Build a Basic E-commerce App with Next.js!",
+    "es": "¡Construye una App de Comercio Electrónico Básica con Next.js!"
+  },
+  "slug": "ecommerce-app-nextjs",
+  "status": "published",
+  "duration": 4,
+  "preview": "https://storage.googleapis.com/screenshots-breathecode/ecommerce-app-preview.png",
+  "translations": ["es", "us"],
+  "difficulty": "intermediate",
+  "technologies": ["javascript", "react", "next.js"],
+  "description": {
+    "us": "Build a basic e-commerce app with Next.js! Create a simple online store with product listings, a shopping cart, and a checkout page. Learn Next.js fundamentals and enhance your web development skills.",
+    "es": "¡Construye una app de comercio electrónico básica con Next.js! Crea una tienda en línea simple con listado de productos, carrito de compras y página de pago. Aprende fundamentos de Next.js y mejora tus habilidades web."
+  },
+  "autoPlay": false,
+  "projectType": "project"
 }
