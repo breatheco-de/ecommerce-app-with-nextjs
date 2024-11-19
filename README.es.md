@@ -2,13 +2,13 @@
 # ¡Construye una App de Comercio Electrónico Básica con Next.js!
 <!-- endhide -->
 
-<!-- howtostart -->
+<onlyfor saas="true" withBanner="true">
 ## 🌱 ¿Cómo iniciar este proyecto?
 
 No clones este repositorio porque vamos a utilizar una plantilla diferente.
 
 > ⚠ ¡Necesitarás tener Node.js instalado si lo haces localmente, pero todo eso ya está instalado en Codespaces o Gitpod!
-<!-- endhowtostart -->
+</onlyfor>
 
 ## 📝 Instrucciones
 
