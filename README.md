@@ -2,7 +2,7 @@
 # Build a Basic E-commerce App with Next.js!
 <!-- endhide -->
 
-<onlyfor saas="true" withBanner="true">
+<onlyfor saas="true" withBanner="false">
 ## 🌱 How to start this project?
 
 Do not clone this repository because we are going to use a different template.
