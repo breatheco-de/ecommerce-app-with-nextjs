@@ -2,7 +2,7 @@
 # ¡Construye una App de Comercio Electrónico Básica con Next.js!
 <!-- endhide -->
 
-<onlyfor saas=false withBanner="false">
+<onlyfor saas="false" withBanner="false">
 ## 🌱 ¿Cómo iniciar este proyecto?
 
 No clones este repositorio porque vamos a utilizar una plantilla diferente.
